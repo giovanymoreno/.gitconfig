@@ -7,3 +7,4 @@
         ll = log --decorate --numstat --pretty='format:%Cgreen%h %C(yellow)[%cn] %Cred%d %Creset%s %Creset'
         go = "!f() { git add -A; git commit -q -m \"$1\"; git log -1 --oneline; git status;}; f"
         ft = "!f() { git fetch origin $(git rev-parse --abbrev-ref HEAD);}; f"
+        pushn = "!f() { git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD);}; f"
