@@ -3,8 +3,13 @@
         co = checkout
         cm = commit -m
         br = branch
-        lol = log --graph --oneline --decorate --pretty='format:%d %Cgreen%h %C(yellow)[%an %cr] %Creset%s'
-        ll = log --decorate --numstat --pretty='format:%Cgreen%h %C(yellow)[%cn] %Cred%d %Creset%s %Creset'
+        #git go "commitmessage". Add all changes, commit and show status
         go = "!f() { git add -A; git commit -q -m \"$1\"; git log -1 --oneline; git status;}; f"
+        #git ft. Fetch current branch only
         ft = "!f() { git fetch origin $(git rev-parse --abbrev-ref HEAD);}; f"
+        #git pushn. Push a new branch
         pushn = "!f() { git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD);}; f"
+        #git delr. Remove local references to remote branches (cleanup)
+        delr = "!f() { git branch -r | grep -Ev 'HEAD|master'  | xargs -r git branch -rd;}; f"
+        #git msg. Get last commit's message
+        msg = log -1 --pretty=%B
