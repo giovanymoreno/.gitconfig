@@ -2,7 +2,7 @@
         st = status
         co = checkout
         cm = commit -m
-        br = branch
+        br = branch --sort=-committerdate
         #git go "commitmessage". Add all changes, commit and show status
         go = "!f() { git add -A; git commit -q -m \"$1\"; git log -1 --oneline; git status;}; f"
         #git ft. Fetch current branch only
